@@ -11,7 +11,7 @@ const SPACE = document.querySelector('.keyboard__btn--space');
 const buttonPress = (event) => {
     if (event.code == "Space") {
         flashing(SPACE);
-        playSound(SPACE);
+        playSound(sound(SPACE));
     } 
     
     else {
