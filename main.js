@@ -37,9 +37,9 @@ const buttonPress = (event) => {
         default:
             key = event.code.slice(-1).toString().toLowerCase();
     }
-    console.log(key);
-    console.log(event);
-    console.log(event.keyCode);
+    // console.log(key);
+    // console.log(event);
+    // console.log(event.keyCode);
     if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 219 ||
         event.keyCode == 221 || event.keyCode == 186 || event.keyCode == 222 ||
         event.keyCode == 188 || event.keyCode == 190 || event.keyCode == 191 ||
@@ -63,7 +63,7 @@ let flashing = function (element) {
 
 let sound = (button) => {
     note = button.getAttribute('data-note');
-    console.log(note);
+    // console.log(note);
     return note;
 }
 const SOUNDTOOGLE = document.querySelector('label[for="slideThree"]');
