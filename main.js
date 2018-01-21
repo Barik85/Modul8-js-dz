@@ -39,14 +39,18 @@ const buttonPress = (event) => {
     }
     console.log(key);
     console.log(event);
-    buttons.forEach(function (item, i, arr) {
-        if (item.innerHTML == key) {
-            flashing(item);
-            playSound(sound(item));
-        }
-    });
-
-
+    console.log(event.keyCode);
+    if (event.keyCode >= 65 && event.keyCode <= 90 || event.keyCode == 219 ||
+        event.keyCode == 221 || event.keyCode == 186 || event.keyCode == 222 ||
+        event.keyCode == 188 || event.keyCode == 190 || event.keyCode == 191 ||
+        event.keyCode == 32 ) {
+        buttons.forEach(function (item, i, arr) {
+            if (item.innerHTML == key) {
+                flashing(item);
+                playSound(sound(item));
+            }
+        });
+    }
 }
 
 window.addEventListener('keydown', buttonPress);
@@ -63,11 +67,11 @@ let sound = (button) => {
     return note;
 }
 const SOUNDTOOGLE = document.querySelector('label[for="slideThree"]');
-let mute = function() {
+let mute = function () {
     const audioList = document.querySelectorAll('audio');
-    audioList.forEach(function(item, i, arr){
-        if (!item.muted){
-        item.muted = true;
+    audioList.forEach(function (item, i, arr) {
+        if (!item.muted) {
+            item.muted = true;
         } else {
             item.muted = false;
         }
