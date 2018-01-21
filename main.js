@@ -6,40 +6,45 @@ const playSound = note => {
 
 const buttons = Array.from(document.querySelectorAll("button"));
 const keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./".split("");
-const SPACE = document.querySelector('.keyboard__btn--space');
 
 const buttonPress = (event) => {
-    if (event.code == "Space") {
-        flashing(SPACE);
-        playSound(sound(SPACE));
-    } else {
-        let key;
-        if (event.code == "BracketLeft") {
+    switch (event.code) {
+        case "Space":
+            key = "space";
+            break;
+        case "BracketLeft":
             key = "[";
-        } else if (event.code == "BracketRight") {
+            break;
+        case "BracketRight":
             key = "]";
-        } else if (event.code == "Semicolon") {
+            break;
+        case "Semicolon":
             key = ";";
-        } else if (event.code == "Quote") {
+            break;
+        case "Quote":
             key = "'";
-        } else if (event.code == "Comma") {
+            break;
+        case "Comma":
             key = ",";
-        } else if (event.code == "Period") {
+            break;
+        case "Period":
             key = ".";
-        } else if (event.code == "Slash") {
+            break;
+        case "Slash":
             key = "/";
-        } else {
+            break;
+        default:
             key = event.code.slice(-1).toString().toLowerCase();
-        }
-        console.log(key);
-        console.log(event);
-        buttons.forEach(function (item, i, arr) {
-            if (item.innerHTML == key) {
-                flashing(item);
-                playSound(sound(item));
-            }
-        });
     }
+    console.log(key);
+    console.log(event);
+    buttons.forEach(function (item, i, arr) {
+        if (item.innerHTML == key) {
+            flashing(item);
+            playSound(sound(item));
+        }
+    });
+
 
 }
 
