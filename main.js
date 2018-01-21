@@ -8,6 +8,7 @@ const buttons = Array.from(document.querySelectorAll("button"));
 const keys = "qwertyuiop[]asdfghjkl;'zxcvbnm,./".split("");
 
 const buttonPress = (event) => {
+    let key;
     switch (event.code) {
         case "Space":
             key = "space";
