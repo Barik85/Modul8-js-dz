@@ -66,7 +66,7 @@ let sound = (button) => {
     // console.log(note);
     return note;
 }
-const SOUNDTOOGLE = document.querySelector('label[for="slideThree"]');
+const SOUNDTOOGLE = document.querySelector('.slideThree');
 let mute = function () {
     const audioList = document.querySelectorAll('audio');
     audioList.forEach(function (item, i, arr) {
@@ -76,5 +76,11 @@ let mute = function () {
             item.muted = false;
         }
     })
+    const INPUT = document.querySelector('#slideThree');
+    switch (INPUT.checked){
+        case true: INPUT.checked = false;
+        break;
+        case false: INPUT.checked = true;
+    }
 }
 SOUNDTOOGLE.addEventListener('click', mute);
